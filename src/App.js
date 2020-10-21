@@ -143,7 +143,7 @@ const App = () => {
 				}}
 			>
 				<div style={{ display: 'flex', flexDirection: 'column' }}>
-					<h3>Configuration</h3>
+					<h3>选择本周焦灼（虚空/电弧/烈日）</h3>
 					<Config
 						selected={config}
 						onSelect={(id) => {
@@ -151,7 +151,7 @@ const App = () => {
 
 							if (
 								Object.keys(locked).length === 0 ||
-								!window.confirm('Would you like to reset the puzzle state?')
+								!window.confirm('是否要重置拼图状态？')
 							) {
 								return
 							}
@@ -161,7 +161,7 @@ const App = () => {
 					/>
 
 					<h3>
-						Console{' '}
+						控制台{' '}
 						<select
 							value={consoleNumbers[0]}
 							onChange={(ev) => setConsoleNumbers({ '0': ev.target.value })}
@@ -199,7 +199,7 @@ const App = () => {
 					</div>
 
 					<h3>
-						Console{' '}
+						控制台{' '}
 						<select
 							value={consoleNumbers[1]}
 							onChange={(ev) => setConsoleNumbers({ '1': ev.target.value })}
@@ -245,7 +245,7 @@ const App = () => {
 					}}
 				>
 					<h3>
-						Solution{' '}
+						解密答案{' '}
 						{solution.number > 0 ? (
 							locked[`${solution.color}-${solution.number}`] == null ? (
 								<span
@@ -263,11 +263,11 @@ const App = () => {
 								</span>
 							) : (
 								<span style={{ color: 'blue', padding: 8 }}>
-									Previously Found
+									之前找到过
 								</span>
 							)
 						) : (
-							<span style={{ color: 'red', padding: 8 }}>Not Found</span>
+							<span style={{ color: 'red', padding: 8 }}>没找到</span>
 						)}
 					</h3>
 
@@ -289,7 +289,7 @@ const App = () => {
 								dispatchLastLocked({ type: 'push', solution })
 							}}
 						>
-							Lock Sequence
+							锁定序列
 						</button>
 
 						<button
@@ -302,7 +302,7 @@ const App = () => {
 								dispatchLastLocked({ type: 'pop' })
 							}}
 						>
-							Undo
+							撤销
 						</button>
 
 						<button
@@ -310,7 +310,7 @@ const App = () => {
 							onClick={() => {
 								if (
 									!window.confirm(
-										'Are you sure that you want to reset the puzzle state?',
+										'确定要重置拼图状态吗？',
 									)
 								) {
 									return
@@ -320,7 +320,7 @@ const App = () => {
 								dispatchLastLocked({ type: 'clear' })
 							}}
 						>
-							Reset
+							重置
 						</button>
 					</div>
 
@@ -358,20 +358,22 @@ const App = () => {
 					style={{ marginRight: '1em' }}
 					onClick={() => setShowInstructions(true)}
 				>
-					Show Instructions
+					显示说明
 				</button>
 
 				<div style={{ margin: '1em 0px' }}>
-					Created by DeedleFake. Inspired by{' '}
+					由DeedleFake创造，
+					<a href="https://space.bilibili.com/9656618" target="__blank__">阿松呀</a>
+					汉化，灵感来自于{' '}
 					<a href="https://dm.reddit.com/r/raidsecrets/comments/bmi7fv/void_configuration_solution_solver_mobile_support/emwtklf/">
-						this comment
+						这个评论
 					</a>
 					.
 				</div>
 			</div>
 
 			<Modal open={showInstructions} onClose={() => setShowInstructions(false)}>
-				<h4>Instructions</h4>
+				<h4>使用说明</h4>
 
 				<p style={{ maxWidth: 600 }}>
 					To use, simply click the numbers on the corresponding consoles that
@@ -382,11 +384,21 @@ const App = () => {
 				</p>
 
 				<p style={{ maxWidth: 600 }}>
+				要使用，只需单击游戏中突出显示的相应控制台上的数字。一旦输入足够的数字来确定解密答案，其中一个彩色房间中的终端将在右侧答案图中突出显示。只需到游戏中相应的终端并锁定序列。
+				</p>
+
+				<p style={{ maxWidth: 600 }}>
 					As an extra convienence, clicking the <code>Lock Sequence</code>{' '}
 					button below the solution will mark the current terminal as having
 					been locked, removing it from the map and removing the terminal
 					sequences for that solution from the possibilities.
 				</p>
+				
+				<p style={{ maxWidth: 600 }}>
+				为方便起见，单击解密答案下方的<code>锁定序列</code>按钮将标记当前终端已被锁定，将其从地图中删除，并从可能性中删除该解密答案的终端序列。
+				</p>
+				
+
 			</Modal>
 		</div>
 	)

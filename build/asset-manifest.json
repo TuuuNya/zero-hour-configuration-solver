@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/zero-hour-configuration-solver/static/css/main.99f87288.chunk.css",
+    "main.js": "/zero-hour-configuration-solver/static/js/main.87c6f0cb.chunk.js",
+    "main.js.map": "/zero-hour-configuration-solver/static/js/main.87c6f0cb.chunk.js.map",
+    "runtime-main.js": "/zero-hour-configuration-solver/static/js/runtime-main.0ddb3d37.js",
+    "runtime-main.js.map": "/zero-hour-configuration-solver/static/js/runtime-main.0ddb3d37.js.map",
+    "static/js/2.88bfa6cf.chunk.js": "/zero-hour-configuration-solver/static/js/2.88bfa6cf.chunk.js",
+    "static/js/2.88bfa6cf.chunk.js.map": "/zero-hour-configuration-solver/static/js/2.88bfa6cf.chunk.js.map",
+    "index.html": "/zero-hour-configuration-solver/index.html",
+    "precache-manifest.44d0ca23bd92daf1059290237e973cbd.js": "/zero-hour-configuration-solver/precache-manifest.44d0ca23bd92daf1059290237e973cbd.js",
+    "service-worker.js": "/zero-hour-configuration-solver/service-worker.js",
+    "static/css/main.99f87288.chunk.css.map": "/zero-hour-configuration-solver/static/css/main.99f87288.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0ddb3d37.js",
+    "static/js/2.88bfa6cf.chunk.js",
+    "static/css/main.99f87288.chunk.css",
+    "static/js/main.87c6f0cb.chunk.js"
+  ]
+}
